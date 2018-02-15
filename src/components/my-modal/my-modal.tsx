@@ -1,4 +1,4 @@
-import {Component, Prop, Element, Method, Event, EventEmitter, Listen} from '@stencil/core';
+import {Component, Prop, Element, Method, Event, EventEmitter, Listen, State} from '@stencil/core';
 
 @Component({
     tag: 'my-modal',
@@ -6,6 +6,7 @@ import {Component, Prop, Element, Method, Event, EventEmitter, Listen} from '@st
 })
 export class MyModal {
     @Prop() title: string = '';
+    @State() isOpen: boolean = false;
 
     @Element() element: HTMLElement;
 
@@ -14,34 +15,45 @@ export class MyModal {
 
     @Method()
     openModal(): void {
-        this.element.classList.remove('off');
         // Emitimos un evento de modal abierto
+        this.showModal(true);
         this.open.emit(true);
     }
 
     @Method()
     closeModal(): void {
-      if (!this.element.classList.contains('off')) {
-        this.element.classList.add('off');
-        // Emitimos un evento de modal cerrado
-        this.close.emit(true);
-      }
+        if (!this.isOpen) {
+            // this.element.classList.add('off');
+            this.showModal(false);
+            // Emitimos un evento de modal cerrado
+            this.close.emit(true);
+        }
     }
 
+    // Escuchamos el evento del teclado keydown y más especificamente la tecla de "Escape"
     @Listen('window:keydown.escape')
-    handleEscapeKey(){
-      this.closeModal();
+    handleEscapeKey(): void {
+        this.closeModal();
+    }
+
+    componentWillLoad() {
+        this.showModal(this.isOpen);
+    }
+
+    private showModal(show: boolean): void {
+        this.isOpen = !show;
+        this.element.classList.toggle('off', this.isOpen);
     }
 
     render() {
-        return (
+      return (
             <div>
                 <h1>{this.title}</h1>
+
                 {/*Aqui iria todo el contenido que introduzcamos dentro del componente*/}
                 <slot />
 
                 <div class="modal-footer">
-
                   <button
                     type="button"
                     class="btn-accept"
@@ -50,6 +62,7 @@ export class MyModal {
                     Aceptar
                   </button>
                 </div>
+
             </div>
         );
     }
