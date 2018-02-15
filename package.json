@@ -1,8 +1,8 @@
 {
-  "name": "@stencil/starter",
+  "name": "stencil-modal-example",
   "private": true,
   "version": "0.0.1",
-  "description": "Stencil App Starter",
+  "description": "Ejemplo de un componente modal haciendo uso de StencilJS",
   "files": [
     "dist/"
   ],
@@ -26,14 +26,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ionic-team/stencil-app-starter.git"
+    "url": "git+https://github.com/magutierrez/stencil-modal-example"
   },
-  "author": "Ionic Team",
+  "author": "Ezequiel Diaz & Miguel Angel Gutiérrez",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ionic-team/stencil"
+    "url": "https://github.com/magutierrez/stencil-modal-example/issues"
   },
-  "homepage": "https://github.com/ionic-team/stencil",
+  "homepage": "https://github.com/magutierrez/stencil-modal-example",
   "jest": {
     "transform": {
       "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"

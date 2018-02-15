@@ -17,29 +17,29 @@ declare global {
 
 
 import {
-  PdModal as PdModal
-} from './components/pd-modal/pd-modal';
+  MyModal as MyModal
+} from './components/my-modal/my-modal';
 
 declare global {
-  interface HTMLPdModalElement extends PdModal, HTMLStencilElement {
+  interface HTMLMyModalElement extends MyModal, HTMLStencilElement {
   }
-  var HTMLPdModalElement: {
-    prototype: HTMLPdModalElement;
-    new (): HTMLPdModalElement;
+  var HTMLMyModalElement: {
+    prototype: HTMLMyModalElement;
+    new (): HTMLMyModalElement;
   };
   interface HTMLElementTagNameMap {
-    "pd-modal": HTMLPdModalElement;
+    "my-modal": HTMLMyModalElement;
   }
   interface ElementTagNameMap {
-    "pd-modal": HTMLPdModalElement;
+    "my-modal": HTMLMyModalElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "pd-modal": JSXElements.PdModalAttributes;
+      "my-modal": JSXElements.MyModalAttributes;
     }
   }
   namespace JSXElements {
-    export interface PdModalAttributes extends HTMLAttributes {
+    export interface MyModalAttributes extends HTMLAttributes {
       title?: string;
     }
   }

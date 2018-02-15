@@ -18,12 +18,34 @@
 </head>
 <body>
 
-  <pd-modal title="Mi titulo por atributo" id="modal" class="off">
+  <my-modal title="Mi titulo por atributo" id="modal" class="off">
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, libero blanditiis, perspiciatis odit alias error natus in dicta quos tempora a facere totam omnis animi iure incidunt illum odio</p>
-  </pd-modal>
+  </my-modal>
 
-  <button onclick="document.querySelector('#modal').openModal()"> Abre la modal</button>
-  <button onclick="document.querySelector('#modal').closeModal()"> Cierra la modal</button>
+  <button id="open-modal-button"> Abre la modal</button>
+  <button id="close-modal-button"> Cierra la modal</button>
 
+  <script>
+    (function(){
+      var myModal = document.querySelector('my-modal');
+
+      document.getElementById('open-modal-button').addEventListener('click', function (ev) {
+        myModal.openModal();
+      });
+
+      document.getElementById('close-modal-button').addEventListener('click', function (ev) {
+        myModal.closeModal();
+      });
+
+      myModal.addEventListener('close', function () {
+        alert('Modal closed :(');
+      });
+
+      myModal.addEventListener('accept', function () {
+        alert('Accepted');
+      });
+
+    })();
+  </script>
 </body>
 </html>
