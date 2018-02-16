@@ -12,3 +12,33 @@ my-modal {
         display: none;
     }
 }
+
+button {
+	margin :0;
+    border: 0;
+    border-radius: 5px;
+	padding: 16px;
+	display: inline-block;
+	vertical-align: middle;
+	white-space: normal;
+	background: none;
+	line-height:1;
+
+	/* Browsers have different default form fonts */
+    font-size: 13px;
+    font-family: Arial;
+    transition: background-color ease 0.3s;
+
+    &:hover {
+        cursor: pointer;
+    }
+    &.btn-ok {
+        background-color: rgb(32, 155, 196);
+        color: white;
+    }
+
+    &.btn-ko {
+        background-color: rgb(231, 49, 49);
+        color: white;
+    }
+}

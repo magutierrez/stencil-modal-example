@@ -56,7 +56,7 @@ export class MyModal {
                 <div class="modal-footer">
                   <button
                     type="button"
-                    class="btn-accept"
+                    class="btn-ok"
                     onClick={() => this.closeModal()}
                   >
                     Aceptar
