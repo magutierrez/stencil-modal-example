@@ -19,11 +19,14 @@
 <body>
 
   <my-modal title="Mi titulo por atributo" id="modal">
+    <h3>segundo título </h3>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, libero blanditiis, perspiciatis odit alias error natus in dicta quos tempora a facere totam omnis animi iure incidunt illum odio</p>
   </my-modal>
 
-  <button id="open-modal-button" class="btn-ok"> Abre la modal</button>
-  <button id="close-modal-button" class="btn-ko"> Cierra la modal</button>
+  <div class="btn-container">
+    <button id="open-modal-button" class="btn-ok btn-big"> Abre la modal</button>
+    <button id="close-modal-button" class="btn-ko btn-big"> Cierra la modal</button>
+  </div>
 
   <script>
     (function(){
@@ -38,7 +41,7 @@
       });
 
       myModal.addEventListener('close', function () {
-        alert('Modal cerrado :(');
+        alert('Modal cerrado :)');
       });
 
     })();
