@@ -10,6 +10,58 @@
 
   <script src="/build/app.js"></script>
 
+  <style>
+    html {
+      font-family: sans-serif;
+    }
+
+    .btn-container {
+      width: auto;
+      display: table;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .btn-container button {
+      margin: 0 8px;
+    }
+
+    button {
+      margin: 0;
+      border: 0;
+      border-radius: 5px;
+      padding: 16px;
+      display: inline-block;
+      min-width: 175px;
+      vertical-align: middle;
+      white-space: normal;
+      background: none;
+      line-height: 1;
+      outline: none;
+      /* Browsers have different default form fonts */
+      font-size: 13px;
+      transition: background-color ease 0.3s;
+    }
+
+    button:hover {
+      cursor: pointer;
+    }
+
+    button.btn-ok {
+      background-color: #209bc4;
+      color: white;
+    }
+
+    button.btn-ko {
+      background-color: #e73131;
+      color: white;
+    }
+
+    button.btn-big {
+      width: 300px;
+    }
+  </style>
+
 </head>
 <body>
 

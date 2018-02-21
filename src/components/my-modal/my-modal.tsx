@@ -42,7 +42,7 @@ export class MyModal {
         this.showModal(this.isOpen);
     }
 
-    private showModal(show: boolean): void {
+    showModal(show: boolean): void {
         this.isOpen = !show;
         this.element.classList.toggle('off', this.isOpen);
     }
