@@ -2,38 +2,38 @@
 <html dir="ltr" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Stencil Starter App</title>
-  <meta name="Description" content="Welcome to the Stencil App Starter. You can use this starter to build entire apps all with web components using Stencil!">
+  <title>Componente modal hecho con Stencil</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#16161d">
   <meta name="apple-mobile-web-app-capable" content="yes">
 
   <meta http-equiv="x-ua-compatible" content="IE=Edge"/>
 
   <script src="/build/app.js"></script>
 
-  <link rel="apple-touch-icon" href="/assets/icon/icon.png">
-  <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico">
-  <link rel="manifest" href="/manifest.json">
 </head>
 <body>
 
-  <my-modal title="Mi titulo por atributo" id="modal">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, libero blanditiis, perspiciatis odit alias error natus in dicta quos tempora a facere totam omnis animi iure incidunt illum odio</p>
+  <my-modal title="Mi titulo" id="modal">
+    <p>
+      Este es un ejemplo de descripción para un modal hecho con Stencil.<br>
+      Se puede añadir cualquier <strong>elemento</strong><br>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, libero blanditiis, perspiciatis odit alias
+      error natus in dicta quos tempora a facere totam omnis animi iure incidunt illum odio
+    </p>
   </my-modal>
 
-  <button id="open-modal-button"> Abre la modal</button>
-  <button id="close-modal-button"> Cierra la modal</button>
+  <button id="open-modal-button"> Abrir modal</button>
+  <button id="close-modal-button"> Cerrar modal </button>
 
   <script>
     (function(){
       var myModal = document.querySelector('my-modal');
 
-      document.getElementById('open-modal-button').addEventListener('click', function (ev) {
+      document.getElementById('open-modal-button').addEventListener('click', function () {
         myModal.openModal();
       });
 
-      document.getElementById('close-modal-button').addEventListener('click', function (ev) {
+      document.getElementById('close-modal-button').addEventListener('click', function () {
         myModal.closeModal();
       });
 
