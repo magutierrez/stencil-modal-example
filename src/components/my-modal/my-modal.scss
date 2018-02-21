@@ -1,7 +1,5 @@
 $width: 400px;
 
-html { font-family: sans-serif }
-
 my-modal {
     border: 1px solid lightgray;
     left: calc(50% - (#{$width} / 2));
@@ -14,6 +12,9 @@ my-modal {
         display: none;
     }
 }
+
+/* Este sass debería ir en un fichero separado, pero lo hemos dejado aquí para simplificar el ejemplo */
+html { font-family: sans-serif }
 
 .btn-container {
     width: auto;
