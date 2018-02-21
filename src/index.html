@@ -14,6 +14,7 @@
 <body>
 
   <my-modal title="Mi titulo" id="modal">
+    <h3>segundo título </h3>
     <p>
       Este es un ejemplo de descripción para un modal hecho con Stencil.<br>
       Se puede añadir cualquier <strong>elemento</strong><br>
@@ -22,8 +23,10 @@
     </p>
   </my-modal>
 
-  <button id="open-modal-button"> Abrir modal</button>
-  <button id="close-modal-button"> Cerrar modal </button>
+  <div class="btn-container">
+    <button id="open-modal-button" class="btn-ok btn-big"> Abre la modal</button>
+    <button id="close-modal-button" class="btn-ko btn-big"> Cierra la modal</button>
+  </div>
 
   <script>
     (function(){
@@ -38,7 +41,7 @@
       });
 
       myModal.addEventListener('close', function () {
-        alert('Modal cerrado :(');
+        alert('Modal cerrado :)');
       });
 
     })();

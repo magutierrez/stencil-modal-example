@@ -13,7 +13,7 @@ export class MyModal {
     @Event() open: EventEmitter<boolean>;
     @Event() close: EventEmitter<boolean>;
 
-    @Method()
+    @Method() // Con este decorator, exponemos el método al DOM
     openModal(): void {
         // Emitimos un evento de modal abierto
         this.showModal(true);
@@ -23,7 +23,6 @@ export class MyModal {
     @Method()
     closeModal(): void {
         if (!this.isOpen) {
-            // this.element.classList.add('off');
             this.showModal(false);
             // Emitimos un evento de modal cerrado
             this.close.emit(true);
@@ -36,6 +35,9 @@ export class MyModal {
         this.closeModal();
     }
 
+    // Ciclo de vida, el componente se ha cargado pero aún no se ha renderizado.
+    // Sólo se llamará una vez.
+    // Es buen sitio para hacer actualizaciones de último momento antes de que se renderice.
     componentWillLoad() {
         this.showModal(this.isOpen);
     }
@@ -56,7 +58,7 @@ export class MyModal {
                 <div class="modal-footer">
                   <button
                     type="button"
-                    class="btn-accept"
+                    class="btn-ok"
                     onClick={() => this.closeModal()}
                   >
                     Aceptar

@@ -1,12 +1,67 @@
+$width: 400px;
+
 my-modal {
     border: 1px solid lightgray;
-    left: calc(50% - (400px / 2));
+    left: calc(50% - (#{$width} / 2));
     padding: 16px;
     position: fixed;
     top: 30%;
-    width: 400px;
+    width: $width;
 
     &.off {
         display: none;
     }
+}
+
+/* Este sass debería ir en un fichero separado, pero lo hemos dejado aquí para simplificar el ejemplo */
+html { font-family: sans-serif }
+
+.btn-container {
+    width: auto;
+    display: table;
+    margin: 0 auto;
+    position: relative;
+    button {
+        margin: 0 8px;
+    }
+}
+
+button {
+    margin :0;
+    border: 0;
+    border-radius: 5px;
+    padding: 16px;
+    display: inline-block;
+    min-width: 175px;
+    vertical-align: middle;
+    white-space: normal;
+    background: none;
+    line-height:1;
+    outline: none;
+
+    /* Browsers have different default form fonts */
+    font-size: 13px;
+    transition: background-color ease 0.3s;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+
+    &.btn {
+        &-ok {
+            background-color: rgb(32, 155, 196);
+            color: white;
+        }
+
+        &-ko {
+            background-color: rgb(231, 49, 49);
+            color: white;
+        }
+
+        &-big {
+            width: 300px;
+        }
+    }
+
 }
